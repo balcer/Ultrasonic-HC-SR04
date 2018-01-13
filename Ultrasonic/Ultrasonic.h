@@ -13,6 +13,7 @@
   #include "WProgram.h"
 #endif
 
+#define MM 2
 #define CM 1
 #define INC 0
 
@@ -27,8 +28,8 @@ class Ultrasonic
   private:
     int Trig_pin;
     int Echo_pin;
-	long Time_out;
-    long duration,distance_cm,distance_inc;
+    long Time_out;
+    long duration,distance;
 };
 
 #endif

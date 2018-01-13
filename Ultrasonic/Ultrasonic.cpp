@@ -46,10 +46,11 @@ long Ultrasonic::Timing()
 long Ultrasonic::Ranging(int sys)
 {
   Timing();
-  if (sys) {
-	distance_cm = duration /29 / 2 ;
-	return distance_cm;
-  } else {
-	distance_inc = duration / 74 / 2;
-	return distance_inc; }
+  if (sys == MM)
+    distance = duration * 17;
+  else if (sys == CM)
+    distance = duration /29 / 2 ;
+  else if (sys == INC)
+    distance = duration / 74 / 2;
+  return distance;
 }
